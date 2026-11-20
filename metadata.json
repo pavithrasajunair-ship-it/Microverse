@@ -1,0 +1,6 @@
+{
+  "name": "MicroVerse – Microprocessors & Microcontrollers Lab",
+  "description": "Interactive educational universe for mastering 8085, 8086, 8051, and peripheral interfacing through live circuit visualizers, an assembly simulator, exam portal, and AI tutor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

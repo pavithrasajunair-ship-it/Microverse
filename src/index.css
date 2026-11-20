@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink-navy: #101B2D;
+  --color-midnight-navy: #0A1424;
+  --color-metallic-silver: #BFC6CE;
+  --color-soft-silver: #D8DDE3;
+  --color-pearl-white: #F5F3EE;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #0A1424;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Subtle precision metallic trace grid */
+.pcb-grid {
+  background-image:
+    linear-gradient(to right, rgba(16, 27, 45, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 27, 45, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .pcb-grid {
+  background-image:
+    linear-gradient(to right, rgba(191, 198, 206, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(191, 198, 206, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Animated signal pulses along SVG bus lines */
+@keyframes signalDash {
+  from {
+    stroke-dashoffset: 64;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-signal-flow {
+  stroke-dasharray: 8 8;
+  animation: signalDash 1.4s linear infinite;
+}
+
+.animate-silver-trace {
+  stroke-dasharray: 10 22;
+  animation: signalDash 2.6s linear infinite;
+}
+
+.animate-silver-trace-slow {
+  stroke-dasharray: 14 36;
+  animation: signalDash 4.2s linear infinite;
+}
+
+/* Gentle breathing luminescence on central microchip */
+@keyframes chipBreathe {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+.animate-chip-breathe {
+  animation: chipBreathe 4.2s ease-in-out infinite;
+}
+
+/* Subtle floating electronic signal particles */
+@keyframes particleDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+    opacity: 0.72;
+  }
+}
+
+.animate-particle-drift {
+  animation: particleDrift 5.5s ease-in-out infinite;
+}
+
+/* Subtle silver shimmer across button hover */
+@keyframes silverSweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+.group:hover .silver-sheen {
+  animation: silverSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-signal-flow,
+  .animate-silver-trace,
+  .animate-silver-trace-slow,
+  .animate-chip-breathe,
+  .animate-particle-drift {
+    animation: none;
+  }
+}
+
+/* Clean metallic scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(191, 198, 206, 0.45);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(191, 198, 206, 0.25);
+}
