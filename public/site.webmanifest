@@ -1,0 +1,14 @@
+{
+  "name": "MicroVerse",
+  "short_name": "MicroVerse",
+  "description": "Interactive lab for 8085, 8086, 8051 and peripheral interfacing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070D19",
+  "theme_color": "#070D19",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
