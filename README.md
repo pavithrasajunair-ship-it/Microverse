@@ -1,8 +1,12 @@
 # MicroVerse
 
+![MicroVerse overview](docs/banner.png)
+
 An interactive lab for learning microprocessors and microcontrollers: 8085, 8086, 8051 and peripheral interfacing, with live circuit visualisers, an assembly simulator, an exam portal and an AI tutor.
 
 **Stack:** React 19, Vite, Tailwind CSS 4, Motion, Express, Google Gemini.
+
+![What MicroVerse does](docs/features.png)
 
 ## Features
 
@@ -37,6 +41,10 @@ Other scripts: `npm run build`, `npm run preview`, `npm run lint`.
 
 The tutor endpoint (`POST /api/tutor`) validates input, limits request size, rate-limits per visitor and per day, and returns safe error messages. `vercel.json` sets security headers for static hosting.
 
+## How it fits together
+
+![Architecture](docs/architecture.png)
+
 ## Layout
 
 ```
@@ -46,3 +54,7 @@ src/data                  Modules, notes, questions, syllabus theory
 src/engine/sim8085.ts     8085 simulator
 src/context               Progress state
 ```
+
+---
+
+The images in `docs/` are overview graphics, not screenshots. Replace them with real screenshots of the running app whenever you like (keep the same file names).
